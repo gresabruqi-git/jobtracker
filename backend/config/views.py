@@ -8,4 +8,6 @@ def root(request):
         'login': '/api/auth/login/',
         'refresh': '/api/auth/refresh/',
         'logout': '/api/auth/logout/',
+        'applications': '/api/applications/',
+        'dashboard_stats': '/api/dashboard/stats/',
     })

@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from applications.views import dashboard_stats
+
 from . import views
 
 urlpatterns = [
     path('', views.root),
     path('admin/', admin.site.urls),
     path('api/auth/', include('accounts.urls')),
+    path('api/applications/', include('applications.urls')),
+    path('api/dashboard/stats/', dashboard_stats, name='dashboard-stats'),
 ]
