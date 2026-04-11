@@ -32,3 +32,7 @@ staticfiles/
 # OS
 .DS_Store
 Thumbs.db
+
+# Node / Vue
+node_modules/
+frontend/dist/
