@@ -33,35 +33,36 @@ async function submit() {
 
 <template>
   <div class="mx-auto max-w-md">
-    <h1 class="mb-6 text-2xl font-semibold text-white">Log in</h1>
-    <form class="space-y-4 rounded-lg border border-slate-800 bg-slate-900 p-6" @submit.prevent="submit">
+    <h1 class="mb-2 text-3xl font-semibold tracking-tight text-white">Welcome back</h1>
+    <p class="mb-6 text-sm text-slate-300">Sign in to continue tracking your applications.</p>
+    <form class="space-y-4 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/25 backdrop-blur" @submit.prevent="submit">
       <div>
-        <label class="mb-1 block text-sm text-slate-400" for="email">Email</label>
+        <label class="mb-1 block text-sm text-slate-300" for="email">Email</label>
         <input
           id="email"
           v-model="email"
           type="email"
           required
           autocomplete="email"
-          class="w-full rounded border border-slate-700 bg-slate-950 px-3 py-2 text-white outline-none ring-indigo-500 focus:ring-2"
+          class="w-full rounded-lg border border-white/15 bg-slate-950/70 px-3 py-2 text-white outline-none transition focus:border-indigo-300/60 focus:ring-2 focus:ring-indigo-400/40"
         />
       </div>
       <div>
-        <label class="mb-1 block text-sm text-slate-400" for="password">Password</label>
+        <label class="mb-1 block text-sm text-slate-300" for="password">Password</label>
         <input
           id="password"
           v-model="password"
           type="password"
           required
           autocomplete="current-password"
-          class="w-full rounded border border-slate-700 bg-slate-950 px-3 py-2 text-white outline-none ring-indigo-500 focus:ring-2"
+          class="w-full rounded-lg border border-white/15 bg-slate-950/70 px-3 py-2 text-white outline-none transition focus:border-indigo-300/60 focus:ring-2 focus:ring-indigo-400/40"
         />
       </div>
-      <p v-if="err" class="text-sm text-red-400">{{ err }}</p>
+      <p v-if="err" class="rounded-lg border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">{{ err }}</p>
       <button
         type="submit"
         :disabled="loading"
-        class="w-full rounded bg-indigo-600 py-2 font-medium text-white hover:bg-indigo-500 disabled:opacity-50"
+        class="w-full rounded-md bg-indigo-600 py-2 font-medium text-white shadow-lg shadow-indigo-900/40 transition hover:-translate-y-0.5 hover:bg-indigo-500 disabled:opacity-50"
       >
         {{ loading ? '…' : 'Log in' }}
       </button>
